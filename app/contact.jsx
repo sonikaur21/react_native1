@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#fff",
   },
   title: { fontWeight: "bold", fontSize: "18" },
   link: { marginVertical: 10, borderBottomWidth: 1, marginTop: 15 },

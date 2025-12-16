@@ -1,24 +1,30 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
-import Logo from "../assets/img/profile.jpg";
 import ThemedView from "../components/ThemedView";
+import Spacer from "../components/Spacer";
+import ThemedLogo from "../components/ThemedLogo";
+import ThemedText from "../components/ThemedText";
+
 const index = () => {
   return (
     <ThemedView style={styles.container}>
-      <Image source={Logo} style={styles.img} />
-      <Text style={styles.title}>The number 1</Text>
-      <Text style={{ marginTop: 10, marginBottom: 30 }}>Reading List App</Text>
-      <View>
-        <Text style={styles.card}> Hello, this is a card</Text>
-      </View>
-      <Link href="/about" style={styles.link}>
-        {" "}
-        About Page
+      <ThemedLogo style={styles.img} />
+      <Spacer height={20} />
+
+      <ThemedText style={styles.title} title={true}>
+        The number 1
+      </ThemedText>
+
+      <Spacer height={10} />
+      <ThemedText>Reading List App</ThemedText>
+      <Spacer />
+
+      <Link href="/login" style={styles.link}>
+        <ThemedText> Login Page </ThemedText>
       </Link>
-      <Link href="/contact" style={styles.link}>
-        {" "}
-        Contact Page
+      <Link href="/register" style={styles.link}>
+        <ThemedText>Register Page</ThemedText>
       </Link>
     </ThemedView>
   );
@@ -34,10 +40,6 @@ const styles = StyleSheet.create({
   },
   title: { fontWeight: "bold", fontSize: "18", marginTop: 15 },
   img: { width: 200, height: 150 },
-  card: {
-    backgroundColor: "#eee",
-    padding: 20,
-    borderRadius: 5,
-  },
+
   link: { marginVertical: 10, borderBottomWidth: 1, marginTop: 15 },
 });

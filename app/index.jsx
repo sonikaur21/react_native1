@@ -11,20 +11,20 @@ const index = () => {
     <ThemedView style={styles.container}>
       <ThemedLogo style={styles.img} />
       <Spacer height={20} />
-
       <ThemedText style={styles.title} title={true}>
         The number 1
       </ThemedText>
-
       <Spacer height={10} />
       <ThemedText>Reading List App</ThemedText>
       <Spacer />
-
       <Link href="/login" style={styles.link}>
         <ThemedText> Login Page </ThemedText>
       </Link>
       <Link href="/register" style={styles.link}>
         <ThemedText>Register Page</ThemedText>
+      </Link>
+      <Link href="/profile" style={styles.link}>
+        <ThemedText>Profile Page</ThemedText>
       </Link>
     </ThemedView>
   );

@@ -7,6 +7,7 @@ import {
 import React from "react";
 import { useState } from "react";
 import { Link } from "expo-router";
+import { useUser } from "../../hooks/useUser";
 import ThemedView from "../../components/ThemedView";
 import Spacer from "../../components/Spacer";
 import ThemedText from "../../components/ThemedText";
@@ -16,8 +17,12 @@ import ThemedTextInput from "../../components/ThemedTextInput";
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = () => {
-    console.log("login form submitted", email, password);
+
+  const { register } = useUser();
+  const handleSubmit = async () => {
+    try {
+      await register(email, password);
+    } catch (error) {}
   };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
